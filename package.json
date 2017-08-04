@@ -1,0 +1,19 @@
+{
+  "name": "ts-rx",
+  "version": "1.0.0",
+  "description": "本工程为学习RxJS和typecript。",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart": "tsc",
+    "start": "node dist\\js\\main.js"
+  },
+  "author": "frank.yang",
+  "license": "ISC",
+  "dependencies": {
+    "rxjs": "^5.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.19"
+  }
+}
