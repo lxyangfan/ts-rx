@@ -5,7 +5,8 @@
         "removeComments": true,
         "preserveConstEnums": true,
         "sourceMap": true,
-        "outDir": "./dist/js",
+        "outDir": "dist/js",
+        "rootDir": "src",
         "lib": [
             "es2016",
             "dom"

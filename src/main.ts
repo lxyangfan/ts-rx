@@ -2,14 +2,18 @@ import { Observable } from 'rxjs';
 import { TodoService } from './service/todo-service';
 import { NodeHttpClient } from './network/http-client-node-impl';
 
-let service:TodoService = TodoService.getInstance();
-let http:NodeHttpClient = new NodeHttpClient();
-service.setHttp(http);
+// singleton
+const service: TodoService = TodoService.getInstance();
 
-let url = "http://5987c69a2f50af001157524e.mockapi.io/api/v1/todos/";
+const http: NodeHttpClient = new NodeHttpClient();
+service.setHttp(http);  // 依赖注入 dependency injection
+
+const url = "http://5987c69a2f50af001157524e.mockapi.io/api/v1/todos/";
 service.loadAll(url);
 
-let dataStore = service.todos;
-dataStore.subscribe((data)=>{
-    let item = data;
+const dataStore = service.todos;
+dataStore.subscribe(data => {
+    console.log("收到数据 :)");
+    const item = data;
+    console.log(item);
 });

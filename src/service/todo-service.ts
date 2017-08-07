@@ -20,11 +20,13 @@ export class TodoService {
         return TodoService._instance;
     }
 
+    private constructor() {  }
+
     public loadAll(url: string) {
         this._http.get(url).subscribe( data => {
-            debugger;
             this._dataStore.todos = data;
             // copy and new a Object for uni-direction
+            // 使用复制的方式，确保单向数据流
             this._todos.next(Object.assign({}, this._dataStore).todos);
         });
     }
