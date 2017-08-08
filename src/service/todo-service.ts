@@ -20,9 +20,10 @@ export class TodoService {
         return TodoService._instance;
     }
 
-    private constructor() {  }
+    private constructor() { console.log("Service init"); }
 
     public loadAll(url: string) {
+
         this._http.get(url).subscribe( data => {
             this._dataStore.todos = data;
             // copy and new a Object for uni-direction
